@@ -193,7 +193,6 @@ const Footer = () => {
             className="text-sm text-muted-foreground flex items-center gap-2"
             whileHover={{ scale: 1.02 }}
           >
-            Made with 
             <motion.span 
               animate={prefersReducedMotion ? {} : { 
                 scale: [1, 1.3, 1],
