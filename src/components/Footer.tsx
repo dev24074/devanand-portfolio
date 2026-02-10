@@ -189,21 +189,13 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <motion.p 
-            className="text-sm text-muted-foreground flex items-center gap-2"
-            whileHover={{ scale: 1.02 }}
-          >
-            <motion.span 
-              animate={prefersReducedMotion ? {} : { 
-                scale: [1, 1.3, 1],
-                rotate: [0, 10, -10, 0],
-              }} 
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <Heart className="w-4 h-4 text-destructive fill-destructive" />
-            </motion.span> 
-            by Devanand B
-          </motion.p>
+         <motion.p
+  className="text-sm text-muted-foreground"
+  whileHover={{ scale: 1.02 }}
+>
+  Made by Devanand B
+</motion.p>
+
           
           <div className="flex items-center gap-4">
             <p className="text-sm text-muted-foreground">
