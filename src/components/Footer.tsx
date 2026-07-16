@@ -68,11 +68,11 @@ const Footer = () => {
               className="text-3xl font-bold font-display mb-4"
               whileHover={{ scale: 1.02 }}
             >
-              <span className="text-gradient">DEVANAND B</span>
+              <span className="text-gradient">DEV ANAND</span>
             </motion.h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Full Stack Developer passionate about building scalable,
-              cloud-native applications with modern technologies.
+              Data Engineer & Full Stack Developer passionate about building scalable
+              data pipelines, cloud-native applications, and ML-powered solutions.
             </p>
             <motion.div 
               className="flex items-center gap-2 text-sm text-muted-foreground"
@@ -118,7 +118,7 @@ const Footer = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="https://drive.google.com/file/d/17xUc8sVbXPXMqRoeNbKpT34ojQzgS7Bp/view?usp=sharing"
+                href="https://drive.google.com/file/d/1VLs3iG9Hhly7uVzEUUs3wRtlWaX_B34g/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-primary transition-colors text-sm group"
@@ -189,13 +189,22 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-         <motion.p
-  className="text-sm text-muted-foreground"
-  whileHover={{ scale: 1.02 }}
->
-  Made by Devanand B
-</motion.p>
-
+          <motion.p 
+            className="text-sm text-muted-foreground flex items-center gap-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            Made with 
+            <motion.span 
+              animate={prefersReducedMotion ? {} : { 
+                scale: [1, 1.3, 1],
+                rotate: [0, 10, -10, 0],
+              }} 
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              <Heart className="w-4 h-4 text-destructive fill-destructive" />
+            </motion.span> 
+            by Dev Anand
+          </motion.p>
           
           <div className="flex items-center gap-4">
             <p className="text-sm text-muted-foreground">

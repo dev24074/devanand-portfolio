@@ -4,12 +4,9 @@ import { Project } from "@/hooks/useProjects";
 import { useReducedMotion, useIsMobile } from "@/hooks/useReducedMotion";
 
 // Import project images
-import rideBookingImg from "@/assets/project-ridebooking.jpg";
-import emotionImg from "@/assets/project-emotion.jpg";
-import pathfindingImg from "@/assets/project-pathfinding.jpg";
-import gmailImg from "@/assets/project-gmail.jpg";
-import gestureImg from "@/assets/project-gesture.jpg";
-import matrimonyImg from "@/assets/project-matrimony.jpg";
+import cervicalCancerImg from "@/assets/project-cervical-cancer.jpg";
+import esportsImg from "@/assets/project-esports.jpg";
+import gymImg from "@/assets/project-gym.jpg";
 
 interface ProjectCardProps {
   project: Project;
@@ -19,34 +16,28 @@ interface ProjectCardProps {
 
 // Map project titles to imported images
 const projectImages: Record<string, string> = {
-  "AWS-Based Ride Booking Web Application": rideBookingImg,
-  "Real-Time Face Detection and Emotion Analysis System": emotionImg,
-  "A* Pathfinding Algorithm Visualizer": pathfindingImg,
-  "Smart Gmail Tracker": gmailImg,
-  "Hand Gesture Recognition System": gestureImg,
-  "Matrimony Web Platform": matrimonyImg,
+  "ML-Assisted Cervical Cancer Prediction Using PSO": cervicalCancerImg,
+  "Esports Tournament & Player Analytics System": esportsImg,
+  "Full-Stack Gym Management Web Application": gymImg,
 };
 
 // Impact lines for each project
 const projectImpact: Record<string, string> = {
-  "AWS-Based Ride Booking Web Application": "Scalable serverless architecture handling real-time bookings",
-  "Real-Time Face Detection and Emotion Analysis System": "ML-powered emotion detection at 30+ FPS",
-  "A* Pathfinding Algorithm Visualizer": "Interactive algorithm education with step-by-step visualization",
-  "Smart Gmail Tracker": "Automated email analytics saving hours of manual work",
-  "Hand Gesture Recognition System": "Touchless control using computer vision",
-  "Matrimony Web Platform": "Full-stack platform with secure user matching",
+  "ML-Assisted Cervical Cancer Prediction Using PSO": "98.6% accuracy and 100% precision using PSO + Random Forest",
+  "Esports Tournament & Player Analytics System": "13-table MySQL database with advanced analytics",
+  "Full-Stack Gym Management Web Application": "Full-stack platform with JWT auth and real-time analytics",
 };
 
 // Category-based glow colors
 const getCategoryGlow = (category: string) => {
   const glows: Record<string, { shadow: string; gradient: string }> = {
-    "Cloud & Backend": {
-      shadow: "group-hover:shadow-[0_0_40px_-10px_hsl(200_100%_50%/0.5)]",
-      gradient: "from-blue-500/20 via-cyan-500/10 to-blue-600/20",
-    },
     "AI & Computer Vision": {
       shadow: "group-hover:shadow-[0_0_40px_-10px_hsl(280_100%_60%/0.5)]",
       gradient: "from-purple-500/20 via-pink-500/10 to-purple-600/20",
+    },
+    "Cloud & Backend": {
+      shadow: "group-hover:shadow-[0_0_40px_-10px_hsl(200_100%_50%/0.5)]",
+      gradient: "from-blue-500/20 via-cyan-500/10 to-blue-600/20",
     },
     "Algorithms & Visualizers": {
       shadow: "group-hover:shadow-[0_0_40px_-10px_hsl(160_100%_40%/0.5)]",
@@ -61,8 +52,8 @@ const getCategoryGlow = (category: string) => {
 
 const getCategoryGradient = (category: string) => {
   const gradients: Record<string, string> = {
-    "Cloud & Backend": "from-blue-600/80 via-cyan-600/60 to-blue-800/80",
     "AI & Computer Vision": "from-purple-600/80 via-pink-500/60 to-purple-800/80",
+    "Cloud & Backend": "from-blue-600/80 via-cyan-600/60 to-blue-800/80",
     "Algorithms & Visualizers": "from-emerald-600/80 via-teal-500/60 to-emerald-800/80",
   };
   return gradients[category] || "from-primary/80 via-accent/60 to-secondary/80";

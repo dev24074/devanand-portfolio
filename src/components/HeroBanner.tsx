@@ -169,8 +169,8 @@ const HeroBanner = () => {
               variants={itemVariants}
               className="text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-3 tracking-tight"
             >
-              <span className="text-foreground">DEVANAND</span>{" "}
-              <span className="text-gradient">B</span>
+              <span className="text-foreground">DEV</span>{" "}
+              <span className="text-gradient">ANAND</span>
             </motion.h1>
 
             {/* Outcome-Focused Role with Typewriter Effect */}
@@ -180,10 +180,10 @@ const HeroBanner = () => {
             >
               <TypewriterText
                 texts={[
-                  "Building Cloud-Native Systems",
-                  "Crafting AI-Driven Solutions",
-                  "Architecting Scalable Apps",
-                  "Creating Real-time ML Pipelines",
+                  "Data Engineering & Analytics",
+                  "Building ML Pipelines",
+                  "Architecting Scalable Databases",
+                  "Cloud-Native Development",
                 ]}
                 typingSpeed={70}
                 deletingSpeed={40}
@@ -196,8 +196,9 @@ const HeroBanner = () => {
               variants={itemVariants}
               className="text-base text-muted-foreground/80 mb-5 max-w-lg leading-relaxed"
             >
-              Full-stack developer specializing in AWS serverless architectures, 
-              real-time ML pipelines, and scalable web applications.
+              Computer Science undergraduate at VIT Chennai specializing in data engineering, 
+              big data analytics, and machine learning. Experienced building Python/SQL data pipelines, 
+              working across the Hadoop/Spark ecosystem, and applying ML to real-world problems.
             </motion.p>
 
             {/* Social Links */}
@@ -260,7 +261,7 @@ const HeroBanner = () => {
                   asChild
                 >
                   <a 
-                    href="https://drive.google.com/file/d/17xUc8sVbXPXMqRoeNbKpT34ojQzgS7Bp/view?usp=sharing" 
+                    href="https://drive.google.com/file/d/1VLs3iG9Hhly7uVzEUUs3wRtlWaX_B34g/view?usp=sharing" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >

@@ -152,7 +152,7 @@ const SplashScreen = ({ onComplete, minDisplayTime = 2000 }: SplashScreenProps) 
                 animate={{ y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                Devanand B
+                Dev Anand
               </motion.h1>
             </motion.div>
 
@@ -164,7 +164,7 @@ const SplashScreen = ({ onComplete, minDisplayTime = 2000 }: SplashScreenProps) 
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
               >
-                Full Stack Developer
+                Data Engineer
               </motion.p>
             </motion.div>
 

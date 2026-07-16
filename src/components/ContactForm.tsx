@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, X, Loader2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { z } from "zod";
-// Import EmailJS instead of Supabase
-import emailjs from "@emailjs/browser";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -20,7 +19,6 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null); // Added ref for EmailJS
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -59,17 +57,11 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS Integration
-      await emailjs.send(
-        'service_rashe08',   // Replace with your Service ID
-        'template_bjmfw7k',  // Replace with your Template ID
-        {
-          from_name: result.data.name,
-          reply_to: result.data.email,
-          message: result.data.message,
-        },
-        'oCBXZ60jzT-nG5gUJ'    // Replace with your Public Key
-      );
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: result.data,
+      });
+
+      if (error) throw error;
 
       setIsSuccess(true);
       setFormData({ name: "", email: "", message: "" });
@@ -83,7 +75,7 @@ const ContactForm = () => {
         setIsOpen(false);
       }, 2000);
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again or email me directly.",
@@ -121,6 +113,7 @@ const ContactForm = () => {
             />
           </div>
 
+          {/* Collapsed State - CTA Bar */}
           <AnimatePresence mode="wait">
             {!isOpen ? (
               <motion.div
@@ -152,6 +145,7 @@ const ContactForm = () => {
                 className="relative"
               >
                 <div className="px-8 py-8 md:px-12 md:py-10">
+                  {/* Close Button */}
                   <button
                     onClick={handleClose}
                     className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -160,7 +154,8 @@ const ContactForm = () => {
                     <X className="w-5 h-5" />
                   </button>
 
-                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Name Field */}
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-foreground">
                         Name
@@ -181,6 +176,7 @@ const ContactForm = () => {
                       )}
                     </div>
 
+                    {/* Email Field */}
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium text-foreground">
                         Email
@@ -201,6 +197,7 @@ const ContactForm = () => {
                       )}
                     </div>
 
+                    {/* Message Field */}
                     <div className="space-y-2">
                       <label htmlFor="message" className="text-sm font-medium text-foreground">
                         Message
@@ -221,6 +218,7 @@ const ContactForm = () => {
                       )}
                     </div>
 
+                    {/* Submit Button */}
                     <Button
                       type="submit"
                       size="lg"

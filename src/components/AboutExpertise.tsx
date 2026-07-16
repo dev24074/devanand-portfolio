@@ -14,22 +14,22 @@ const AboutExpertise = () => {
     {
       icon: Code2,
       title: "Languages & Frameworks",
-      skills: ["Python", "JavaScript", "TypeScript", "React", "Next.js", "Node.js"],
+      skills: ["Python", "SQL", "JavaScript", "React", "Node.js", "REST APIs"],
     },
     {
       icon: Cloud,
-      title: "Cloud & DevOps",
-      skills: ["AWS Lambda", "S3", "API Gateway", "RDS", "Docker", "Terraform"],
+      title: "Data Engineering & Big Data",
+      skills: ["Hadoop", "HDFS", "MapReduce", "YARN", "Apache Hive", "Apache Spark", "ETL Pipelines"],
     },
     {
       icon: Palette,
-      title: "Frontend & UI",
-      skills: ["Tailwind CSS", "Framer Motion", "Responsive Design", "Figma"],
+      title: "Databases & Analytics",
+      skills: ["MySQL", "MongoDB", "Pandas", "NumPy", "Data Visualization", "Statistical Analysis"],
     },
     {
       icon: Cpu,
-      title: "AI & ML",
-      skills: ["OpenCV", "MediaPipe", "NLP", "Computer Vision", "TensorFlow"],
+      title: "AI & Machine Learning",
+      skills: ["Scikit-learn", "Feature Selection", "SHAP", "SMOTE", "Neural Networks", "Computer Vision"],
     },
   ];
 
@@ -91,25 +91,27 @@ const AboutExpertise = () => {
               className="text-base text-foreground leading-relaxed mb-4"
             >
               I'm a <span className="text-primary font-semibold">Computer Science undergraduate</span> at VIT Chennai 
-              with a deep passion for building cloud-native applications and AI-powered solutions that solve real-world problems.
+              specializing in data engineering, big data analytics, and machine learning. I am passionate about transforming raw data into 
+              actionable insights that drive real-world decisions.
             </motion.p>
             
             <motion.p 
               variants={itemVariants}
               className="text-muted-foreground leading-relaxed mb-4"
             >
-              My journey in tech started with curiosity about how things work under the hood. Today, I specialize in 
-              designing <span className="text-primary/80">serverless architectures on AWS</span>, creating responsive web experiences 
-              with React, and integrating <span className="text-primary/80">machine learning models</span> into production systems.
+              My journey in tech started with a curiosity for how complex systems work under the hood. Today, I build 
+              <span className="text-primary/80"> scalable data pipelines using Python and SQL</span>, work across the 
+              <span className="text-primary/80"> Hadoop and Spark ecosystem</span>, and apply machine learning techniques 
+              to solve problems in healthcare, esports, and enterprise domains.
             </motion.p>
             
             <motion.p 
               variants={itemVariants}
               className="text-muted-foreground leading-relaxed mb-4"
             >
-              I believe in writing clean, maintainable code and following best practices. Whether it's building a 
-              real-time ride booking platform or developing gesture recognition systems, I approach every project 
-              with the goal of creating <span className="text-primary/80">scalable, user-centric solutions</span>.
+              I believe in writing clean, efficient, and maintainable code. Whether it's architecting a normalized MySQL database, 
+              optimizing ETL workflows, or deploying ML models with explainable AI, I approach every project with the goal of creating 
+              <span className="text-primary/80">data-driven, production-ready solutions</span>.
             </motion.p>
 
             <motion.div 
@@ -117,8 +119,8 @@ const AboutExpertise = () => {
               className="pt-5 border-t border-border/50 mt-auto"
             >
               <p className="text-sm text-muted-foreground italic">
-                "I bridge the gap between software engineering and intelligent automation—turning 
-                complex problems into production-ready solutions."
+                "I bridge the gap between software engineering and data science—turning complex datasets into 
+                intelligent, impactful solutions."
               </p>
             </motion.div>
           </motion.div>

@@ -1,51 +1,102 @@
-**Use your preferred IDE**
+# Devanand B — Developer Portfolio
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+A modern, animated developer portfolio built with React, featuring smooth Framer Motion animations, a Netflix-style project carousel, and a fully functional contact form.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?logo=framer&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
 
-Follow these steps:
+## ✨ Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+- **Splash Screen** — Animated intro on first visit
+- **Typewriter Hero** — Dynamic role titles with typing/deleting animation
+- **Project Carousel** — Netflix-style horizontally scrollable project cards grouped by category
+- **Project Modal** — Detailed project view with tech stack, features, and links
+- **About & Expertise** — Skills showcase with proficiency indicators
+- **Experience Timeline** — Professional and academic history
+- **Certifications** — Visual certification cards
+- **Contact Form** — Functional email delivery via Resend
+- **Floating Orbs** — Ambient animated background elements
+- **Fully Responsive** — Optimized for desktop, tablet, and mobile
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 + TypeScript |
+| Build Tool | Vite |
+| Styling | Tailwind CSS + shadcn/ui |
+| Animations | Framer Motion |
+| Backend | Supabase (Database, Edge Functions) |
+| Email | Resend API |
+| Data Fetching | TanStack React Query |
+| Routing | React Router v6 |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+)
+- npm or bun
+
+### Installation
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📁 Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── assets/              # Images (profile, projects, certifications)
+├── components/
+│   ├── animations/      # Reusable animation components
+│   │   ├── FloatingOrbs.tsx
+│   │   ├── TypewriterText.tsx
+│   │   ├── GlowingCard.tsx
+│   │   ├── ParallaxSection.tsx
+│   │   └── ...
+│   ├── ui/              # shadcn/ui primitives
+│   ├── Navbar.tsx
+│   ├── HeroBanner.tsx
+│   ├── ProjectCarousel.tsx
+│   ├── ProjectModal.tsx
+│   ├── AboutExpertise.tsx
+│   ├── ExperienceSection.tsx
+│   ├── CertificationsSection.tsx
+│   ├── ContactForm.tsx
+│   └── Footer.tsx
+├── hooks/               # Custom React hooks
+├── integrations/        # Supabase client & types
+├── pages/
+│   └── Index.tsx        # Main portfolio page
+└── index.css            # Global styles & design tokens
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📬 Contact Form Setup
 
-## What technologies are used for this project?
+The contact form uses a Supabase Edge Function with [Resend](https://resend.com) for email delivery. To enable it:
 
-This project is built with:
+1. Sign up at [resend.com](https://resend.com) and create an API key
+2. Add `RESEND_API_KEY` as an environment secret in your project settings
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📄 License
 
-Yes, you can!
+This project is open source and available under the [MIT License](LICENSE).
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using [Lovable](https://lovable.dev)
